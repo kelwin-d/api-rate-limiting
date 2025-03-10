@@ -1,0 +1,20 @@
+
+_format_version: "1.1"
+services:
+  - name: my-api
+    url: http://mockbin.org/request
+    routes:
+      - name: my-api-route
+        paths:
+          - /my-api
+        strip_path: true
+
+plugins:
+  - name: rate-limiting
+    service: my-api
+    config:
+      second: 10  # Allow 10 requests per second
+      minute: 100  # Allow 100 requests per minute
+      policy: redis
+      redis_host: redis
+

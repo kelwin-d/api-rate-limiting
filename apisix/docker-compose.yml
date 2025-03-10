@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  etcd:
+    image: bitnami/etcd
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+
+  apisix:
+    image: apache/apisix:latest
+    depends_on:
+      - etcd
+      - redis
+    ports:
+      - "9080:9080" # API Gateway
+      - "9180:9180" # Admin API
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
