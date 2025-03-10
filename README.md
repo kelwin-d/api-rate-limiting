@@ -4,7 +4,9 @@ API Rate Limiting in Kong, Apache APISIX, and Azure API Management
 This repository will provide hands-on implementations of API Rate Limiting across three API Gateways:
 
 ✅ Kong API Gateway (Redis-based Rate Limiting)
+
 ✅ Apache APISIX (LuaJIT-powered Rate Limiting)
+
 ✅ Azure API Management (APIM) (Managed Quota & Throttling)
 
 📌 Folder Structure for the GitHub Repo
@@ -33,6 +35,7 @@ api-rate-limiting/
 📌 1️⃣ Kong API Gateway: Implementing Rate Limiting
 
 🛠 Step 1: Deploy Kong with Redis Using Docker
+
 kong/docker-compose.yml
 
 version: "3.8"
@@ -65,6 +68,7 @@ services:
       - "6379:6379"
 
 🛠 Step 2: Apply Rate Limiting via Kong Admin API
+
 kong/setup.sh
 
 curl -X POST http://localhost:8001/services/ \
@@ -190,6 +194,9 @@ curl -X GET http://localhost:9180/apisix/admin/routes/1
 Check logs in Azure Monitor → API Gateway Metrics.
 
 📌 Summary
+
 ✔ Kong API Gateway – Best for SaaS & enterprise APIs needing Redis-based distributed Rate Limiting.
+
 ✔ Apache APISIX – Best for high-performance edge APIs with flexible rate-limit policies.
+
 ✔ Azure APIM – Best for fully managed API Rate Limiting & enterprise cloud integrations.
