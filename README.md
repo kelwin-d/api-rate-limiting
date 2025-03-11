@@ -11,6 +11,7 @@ This repository will provide hands-on implementations of API Rate Limiting acros
 
 📌 Folder Structure for the GitHub Repo
 
+```
 api-rate-limiting/
 │── kong/               # Kong API Gateway Rate Limiting
 │   ├── docker-compose.yml
@@ -31,6 +32,7 @@ api-rate-limiting/
 │
 │── app.py              # Simple Flask API for testing rate limits
 │── README.md           # Main documentation
+```
 
 📌 1️⃣ Kong API Gateway: Implementing Rate Limiting
 
